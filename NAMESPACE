@@ -1,0 +1,6 @@
+useDynLib(smaFHNER, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
+importFrom("stats", "rnorm", "runif","residuals","lm")
+importFrom("smallarea", "fayherriot","maximlikelihood","prasadraoest","resimaxilikelihood")
+importFrom("Matrix","bdiag")

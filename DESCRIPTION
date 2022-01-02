@@ -1,0 +1,16 @@
+Package: smaFHNER
+Type: Package
+Title: various predictors and MSPE estimators in small area estimation
+Version: 1.0
+Date: 2021-10-02
+Author: Peiwen Xiao
+Maintainer: Xiao peiwen <2569613200@qq.com>
+Description: various predictors(MOM,ML,REML,EB) and MSPE estimators(PR,DL,Jackknife,Mcjack,PB,DB,Sucma) in small area estimation.
+Depends: stats,smallarea,Matrix
+License: GPL-2
+Imports: Rcpp (>= 1.0.7)
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 7.1.2
+Encoding: UTF-8
+NeedsCompilation: yes
+Packaged: 2021-10-03 10:55:26 UTC; 25696
