@@ -1,16 +1,17 @@
-Package: smaFHNER
+Package: saeMSPE
 Type: Package
-Title: various predictors and MSPE estimators in small area estimation
+Title: compute MSPE estimators for the Fay Herriot model and Nested
+        error regression model
 Version: 1.0
-Date: 2021-10-02
-Author: Peiwen Xiao
-Maintainer: Xiao peiwen <2569613200@qq.com>
-Description: various predictors(MOM,ML,REML,EB) and MSPE estimators(PR,DL,Jackknife,Mcjack,PB,DB,Sucma) in small area estimation.
-Depends: stats,smallarea,Matrix
-License: GPL-2
-Imports: Rcpp (>= 1.0.7)
+Date: 2022-01-04
+Author: Peiwen Xiao, Xiaohui Liu, Yuzi Liu, Jiming Jiang, Shaochu Liu
+Maintainer: Peiwen Xiao <2569613200@qq.com>
+Description: We describe a new R package entitled saeMSPE for the well-known Fay Herriot model and nested error regression model in small area estimation. Based on this package, it is possible to easily compute various common mean squared predictive error (MSPE) estimators, as well as several existing variance component predictors as a byproduct, for these two models.
+License: GPL (>=2)
+Depends: Matrix
+Imports: Rcpp (>= 1.0.7), smallarea
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 7.1.2
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2021-10-03 10:55:26 UTC; 25696
+Packaged: 2022-01-09 06:40:07 UTC; 25696

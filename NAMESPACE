@@ -1,6 +1,6 @@
-useDynLib(smaFHNER, .registration=TRUE)
+useDynLib(saeMSPE, .registration=TRUE)
 importFrom(Rcpp, evalCpp)
+importFrom("stats", "aggregate", "nlminb", "sd")
+importFrom("Matrix", "bdiag")
 exportPattern("^[[:alpha:]]+")
-importFrom("stats", "rnorm", "runif","residuals","lm")
-importFrom("smallarea", "fayherriot","maximlikelihood","prasadraoest","resimaxilikelihood")
-importFrom("Matrix","bdiag")
+
