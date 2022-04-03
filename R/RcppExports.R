@@ -13,7 +13,7 @@ mspeNERjack <- function(ni, X, Y, Xmean, method = 2L) {
     .Call(`_saeMSPE_mspeNERjack`, ni, X, Y, Xmean, method)
 }
 
-mspeNERmcjack <- function(ni, X, Y, Xmean, K, method = 2L) {
+mspeNERmcjack <- function(ni, X, Y, Xmean, K = 50L, method = 2L) {
     .Call(`_saeMSPE_mspeNERmcjack`, ni, X, Y, Xmean, K, method)
 }
 
@@ -21,7 +21,7 @@ mspeNERpb <- function(ni, X, Y, Xmean, K = 50L) {
     .Call(`_saeMSPE_mspeNERpb`, ni, X, Y, Xmean, K)
 }
 
-mspeNERsumca <- function(ni, X, Y, Xmean, K, method) {
+mspeNERsumca <- function(ni, X, Y, Xmean, K = 50L, method = 2L) {
     .Call(`_saeMSPE_mspeNERsumca`, ni, X, Y, Xmean, K, method)
 }
 
@@ -41,7 +41,7 @@ mspeFHpb <- function(Y, X, D, K = 50L) {
     .Call(`_saeMSPE_mspeFHpb`, Y, X, D, K)
 }
 
-mspeFHsumca <- function(Y, X, D, K, method = 2L) {
+mspeFHsumca <- function(Y, X, D, K = 50L, method = 2L) {
     .Call(`_saeMSPE_mspeFHsumca`, Y, X, D, K, method)
 }
 

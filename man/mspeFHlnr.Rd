@@ -4,7 +4,7 @@
 Compute MSPE through linearization method for Fay Herriot model
 }
 \description{
-This function returns MSPE estimator with linearization appoximation method for Fay Herriot model
+This function returns MSPE estimate with linearization appoximation method for Fay Herriot model.
 }
 \usage{
 mspeFHlnr(Y, X, D, method = "PR", var.method = "default")
@@ -15,16 +15,16 @@ mspeFHlnr(Y, X, D, method = "PR", var.method = "default")
 a numeric vector. It represents the response value for Fay Herriot model.
 }
   \item{X}{
-a numeric matrix. Stands for the available auxiliary values.
+a numeric matrix. It stands for the available auxiliary values.
 }
   \item{D}{
 a numeric vector consisting of the known sampling variances of each of the small area levels.
 }
   \item{method}{
-The MSPE estimation method to be used. See "Details".
+MSPE estimation method. See "Details".
 }
   \item{var.method}{
-The variance component estimation method to be used. See "Details".
+Variance component estimation method. See "Details".
 }
 }
 \details{
@@ -47,15 +47,18 @@ For \code{method = "DRS"}, \code{var.method = "EB"} is the only available varian
 For \code{method = "MPR"}, \code{var.method = "OBP"} is the only available variance component estimation method.
 
 }
+\value{
+This function returns a vector of the MSPE estimates.
+}
 
 \references{
-N. G. N. Prasad and J. N. K. Rao. The estimation of the mean squared error of small-area estimators. Journal of the American Statistical Association, 85(409):163-171, 1990.
+N. G. N. Prasad and J. N. K. Rao. The estimation of the mean squared error of small-area estimators. \emph{Journal of the American Statistical Association}, 85(409):163-171, 1990.
 
-G. S. Datta and P. Lahiri. A unified measure of uncertainty of estimated best linear unbiased predictors in small area estimation problems. Statistica Sinica, 10(2):613-627, 2000.
+G. S. Datta and P. Lahiri. A unified measure of uncertainty of estimated best linear unbiased predictors in small area estimation problems. \emph{Statistica Sinica}, 10(2):613-627, 2000.
 
-G. S. Datta and R. D. D. Smith. On measuring the variability of small area estimators under a basic area level model. Biometrika, 92(1):183-196, 2005.
+G. S. Datta and R. D. D. Smith. On measuring the variability of small area estimators under a basic area level model. \emph{Biometrika}, 92(1):183-196, 2005.
 
-X. Liu, H. Ma, and J. Jiang. That prasad-rao is robust: Estimation of mean squared prediction error of observed best predictor under potential model misspecification. Statistica Sinica, 2020.
+X. Liu, H. Ma, and J. Jiang. That prasad-rao is robust: Estimation of mean squared prediction error of observed best predictor under potential model misspecification. \emph{Statistica Sinica}, 2020.
 }
 \author{
 Peiwen Xiao, Xiaohui Liu, Yuzi Liu, Jiming Jiang, and Shaochu Liu
@@ -63,6 +66,10 @@ Peiwen Xiao, Xiaohui Liu, Yuzi Liu, Jiming Jiang, and Shaochu Liu
 
 
 \examples{
-1
+X = matrix(runif(10 * 3), 10, 3)
+X[,1] = rep(1, 10) 
+D = (1:10) / 10 + 0.5
+Y = X \%*\% c(0.5,1,1.5) + rnorm(10, 0, sqrt(2)) + rnorm(10, 0, sqrt(D))
+result = mspeFHlnr(Y,X,D,method = "PR", var.method = "default")
 }
 

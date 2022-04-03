@@ -816,9 +816,8 @@ arma::vec mspeFHmcjack(arma::vec Y, arma::mat X, arma::vec D, int K = 50, int me
 
 // functions for parameter bootstrap method with FH model
 List FHpbootstrap(int m, int p, arma::mat X, arma::vec Y_star, arma::vec D, arma::mat Y){
-  List Est_FH = varfh(Y_star, X, D, 4);
-  double psi_FH = Est_FH["Ahat"];
-  arma::vec bhat = Est_FH["bhat"];
+  double psi_FH = varfhEB(Y_star, X, D);
+  arma::vec bhat = inv(X.t() * diagmat(1/(psi_FH+D)) * X) * X.t() * diagmat(1/(psi_FH+D)) * Y;
   arma::vec g1 = arma::vec(m); arma::vec g2 = arma::vec(m); arma::vec g3 = arma::vec(m);
   arma::vec theta = arma::vec(m); arma::mat inv_V = diagmat(1/(psi_FH + D));
   for(int i=0; i<m; i++){
