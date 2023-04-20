@@ -34,8 +34,7 @@ mspeNERPR = function(ni, X, Y, X.mean, var.method = "default"){
   V.inv = as.matrix(bdiag(Vi.inv))
   Zmat = as.matrix(bdiag(Zi))
   M = diag(n) - X %*% ntemp %*% t(X)
-  temp = M %*% Zmat %*% t(Zmat)
-  nstar2 = sum(temp * t(temp))
+  nstar2 = sum(diag(M %*% Zmat %*% t(Zmat) %*% M %*% Zmat %*% t(Zmat)))
   vare = (2/(n - m - ncol(X) + 1)) * sige2^2
   varv = (2/nstar^2) * ((1/(n - m - ncol(X) + 1)) * (m - 1) * (n - ncol(X)) * sige2^2 +
                           2 * nstar * sige2 * sigv2 + nstar2 * sigv2^2)
